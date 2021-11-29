@@ -1,30 +1,32 @@
+# frozen_string_literal: true
+
+# kata 02 Game of life day 3
 class Grid
   def initialize(width, height)
     @width = width.to_i
-    @height = height.to_i 
-    @grid = Array.new(@width){ Array.new(@height) }
+    @height = height.to_i
+    @grid = Array.new(@width) { Array.new(@height) }
     generate_template_matrix
   end
 
   def generate_template_matrix
-    for i in (0..@width - 1)
-        for j in (0..@height - 1)
-            @grid[i][j] = "."
-        end
+    (0..@width - 1).each do |i|
+      (0..@height - 1).each do |j|
+        @grid[i][j] = '.'
+      end
     end
-    return @grid
+    @grid
   end
 
   def print_grid
-    for i in (0..@width - 1)
-      for j in (0..@height - 1)
-          print @grid[i][j]
+    (0..@width - 1).each do |i|
+      (0..@height - 1).each do |j|
+        print @grid[i][j]
       end
       puts
     end
   end
 
   # def first_generation
-
   # end
 end
